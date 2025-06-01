@@ -1,19 +1,27 @@
 //Create a simple bio using variables and print it.
-class User {
-  String name;
-  String email;
-  int age;
-
-  User(this.name, this.email, this.age);
-
-  void introduce() {
-    print(
-      'my name is $name and i am $age years old. My email addresss is $email.',
-    );
-  }
+void bio(){
+  String name = 'amrah';
+  String color = 'green';
+  int age = 39;
+  
+  print('my name is $name, I am $age years old and my favorite color is $color');
+}
+void main() {
+  bio();
 }
 
+
+//Do a calculation of area of a rectangle using two variables.
+int areaOfRectangle(int length, int height ){
+  
+ int formular = length * height;
+  
+  return formular;
+  
+}
 void main() {
-  User myBio = User('Amrah', 'sali@gmail.com', 11);
-  myBio.introduce();
+  
+ int result = areaOfRectangle( 2, 9);
+  print(result);
+
 }
