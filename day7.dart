@@ -1,24 +1,25 @@
-// Number Guessing Game
+import 'dart:io';
 import 'dart:math';
+void main(){
+var random = Random();
+int randomNumber = random.nextInt(100);
+int attempt =0;
+int? userGuess;
+do{
+userGuess = int.tryParse(stdin.readLineSync()!);
+attempt ++;
+if (userGuess == null){
+print('please enter a number');
+continue;
+}
 
-void main() {
-  var random = Random();
+if (userGuess < randomNumber){
+print("Too low! Try again.");
+}else if(userGuess > randomNumber ){
+print("Too high! Try again.");
+}else{
+print("Correct! with $attempt attempt.");
+}
+} while (userGuess != randomNumber);
 
-  int randomInt = random.nextInt(10); 
-  
-  int attempt = 0;
-  
-   attempt ++; 
-  
-  if (randomInt == 7){
-    print("$randomInt you won");  
-    print("$attempt attempt");
-  }else if (randomInt <= 4) {
-    print("$randomInt Too low! Try again.");
-  }else if (randomInt >= 8){
-    print("$randomInt Too high! Try again.");
-  }else{
-    print('$randomInt keep tryng');
-  }
-  
 }
